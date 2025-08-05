@@ -1,0 +1,60 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000281269ac060 .scope module, "tb_xs3" "tb_xs3" 2 1;
+ .timescale 0 0;
+v00000281269abeb0_0 .var "a", 3 0;
+v0000028126a39840_0 .net "xs", 3 0, L_0000028126a81a30;  1 drivers
+S_00000281269ac1f0 .scope module, "uut" "xs3" 2 4, 3 1 0, S_00000281269ac060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /OUTPUT 4 "xs";
+L_0000028126a398e8 .functor BUFT 1, C4<1101>, C4<0>, C4<0>, C4<0>;
+v00000281269a7190_0 .net/2u *"_ivl_0", 3 0, L_0000028126a398e8;  1 drivers
+v00000281269a9b80_0 .net *"_ivl_2", 0 0, L_0000028126a818f0;  1 drivers
+L_0000028126a39930 .functor BUFT 1, C4<0011>, C4<0>, C4<0>, C4<0>;
+v00000281269ac380_0 .net/2u *"_ivl_4", 3 0, L_0000028126a39930;  1 drivers
+v00000281269ac420_0 .net *"_ivl_6", 3 0, L_0000028126a81990;  1 drivers
+L_0000028126a39978 .functor BUFT 1, C4<xxxx>, C4<0>, C4<0>, C4<0>;
+v00000281269abcd0_0 .net *"_ivl_8", 3 0, L_0000028126a39978;  1 drivers
+v00000281269abd70_0 .net "a", 3 0, v00000281269abeb0_0;  1 drivers
+v00000281269abe10_0 .net "xs", 3 0, L_0000028126a81a30;  alias, 1 drivers
+L_0000028126a818f0 .cmp/gt 4, L_0000028126a398e8, v00000281269abeb0_0;
+L_0000028126a81990 .arith/sum 4, v00000281269abeb0_0, L_0000028126a39930;
+L_0000028126a81a30 .functor MUXZ 4, L_0000028126a39978, L_0000028126a81990, L_0000028126a818f0, C4<>;
+    .scope S_00000281269ac060;
+T_0 ;
+    %vpi_call 2 6 "$dumpfile", "xs.vcd" {0 0 0};
+    %vpi_call 2 7 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000281269ac060 {0 0 0};
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 14, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v00000281269abeb0_0, 0, 4;
+    %delay 10, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_xs3.v";
+    "xs3.v";
